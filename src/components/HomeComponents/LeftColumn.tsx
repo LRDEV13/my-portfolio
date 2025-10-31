@@ -1,4 +1,4 @@
-import { Box, Typography, Paper, Stack, useTheme } from "@mui/material";
+import { Box, Typography, Paper, Stack, useTheme, useMediaQuery } from "@mui/material";
 import { themeConfig } from "../../theme/themeConfig";
 import { themeContext } from "../../theme/themeContext";
 import { useContext } from "react";
@@ -9,6 +9,7 @@ import SocialButtons from "../SocialButtons";
 export default function LeftColumn() {
   const { mode } = useContext(themeContext);
   const theme = useTheme();
+  const isTablet = useMediaQuery("(max-width: 1199px)");
 
   return (
     <Box
@@ -18,7 +19,9 @@ export default function LeftColumn() {
         mb: { xs: 2, sm: 5, md: 6, lg: 10, xl:16 },
       }}
     >
-      <Paper
+      {!isTablet && (
+        <>
+          <Paper
         elevation={0}
         sx={{
           display: "inline-block",
@@ -54,6 +57,7 @@ export default function LeftColumn() {
       </Typography>
 
       <Box
+      justifyContent={{ xs: "center", sm: "center", md:"center", lg: "flex-start" }}
         sx={{
           display: "flex",
           alignItems: "center",
@@ -64,7 +68,7 @@ export default function LeftColumn() {
       >
         <Box
           sx={{
-            width: 140,
+            width: { xs:80, sm:100, md:125, lg:140, xl:140},
             height: 6,
             bgcolor: theme.palette.custom.primaryGreen,
             borderRadius: 2,
@@ -75,16 +79,21 @@ export default function LeftColumn() {
             ...fontSizeResponsive(54, 44, 36, 26, 26),
             fontWeight: themeConfig.typography.subtitleWeight,
             color: theme.palette.custom.blackwhite,
+            
           }}
         >
           Rodríguez
         </Typography>
       </Box>
+        </>
+      )}
 
-      <Stack
+      {!isTablet && (
+        <>
+          <Stack
         direction="row"
         spacing={2}
-        justifyContent={{ xs: "center", lg: "flex-start" }}
+        justifyContent={{ xs: "center", sm: "center", md:"center", lg: "flex-start" }}
       >
         <EmailBox email="larry.rdevz@outlook.com" />
       </Stack>
@@ -92,11 +101,13 @@ export default function LeftColumn() {
       <Stack
         direction="row"
         spacing={2}
-        justifyContent={{ xs: "center", lg: "flex-start" }}
+        justifyContent={{ xs: "center", sm: "center", md:"center", lg: "flex-start" }}
         sx={{ mt: 3 }}
       >
         <SocialButtons />
       </Stack>
+        </>
+      )}
     </Box>
   );
 }

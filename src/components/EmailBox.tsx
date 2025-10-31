@@ -31,7 +31,7 @@ export default function EmailBox({ email }: Props) {
       setOpenSnackbar(true);
     } catch (e) {
       console.error("No se pudo copiar", e);
-      setSnackbarMessage("Error al copiar el correo ❌");
+      setSnackbarMessage("Error al copiar el correo");
       setOpenSnackbar(true);
     }
   };
@@ -43,7 +43,17 @@ export default function EmailBox({ email }: Props) {
 
   return (
     <>
-      <Stack direction="row" spacing={2} alignItems="center">
+      <Stack
+        direction="row"
+        spacing={2}
+        alignItems="center"
+        justifyContent={{
+          xs: "center",
+          sm: "center",
+          md: "center",
+          lg: "left",
+        }}
+      >
         <Paper
           elevation={0}
           sx={{
@@ -65,7 +75,7 @@ export default function EmailBox({ email }: Props) {
             sx={{
               color: theme.palette.custom.blackwhite,
               fontWeight: 600,
-              ...fontSizeResponsive(20, 18, 18, 16, 16),
+              ...fontSizeResponsive(20, 18, 24, 24, 16),
             }}
           >
             {email}
@@ -91,7 +101,12 @@ export default function EmailBox({ email }: Props) {
               },
             }}
           >
-            <SendRounded sx={{ width: "27px", height: "27px" }} />
+            <SendRounded
+              sx={{
+                width: { xs: "32px", sm: "36px", md: "36px", lg: "27px" },
+                height: { xs: "32px", sm: "36px", md: "36px", lg: "27px" },
+              }}
+            />
           </IconButton>
         </Tooltip>
 
@@ -114,7 +129,12 @@ export default function EmailBox({ email }: Props) {
               },
             }}
           >
-            <ContentCopyRounded sx={{ width: "27px", height: "27px" }} />
+            <ContentCopyRounded
+              sx={{
+                width: { xs: "32px", sm: "36px", md: "36px", lg: "27px" },
+                height: { xs: "32px", sm: "36px", md: "36px", lg: "27px" },
+              }}
+            />
           </IconButton>
         </Tooltip>
       </Stack>

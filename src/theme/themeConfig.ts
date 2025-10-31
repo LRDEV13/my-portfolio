@@ -22,8 +22,8 @@ export const themeConfig = {
     accent: "#1B4D30",
   },
   gradient: {
-    dark: "linear-gradient(to top, rgba(80, 207, 128, 0.6) 28%, rgba(23, 23, 26, 0.3) 72%)",
-    light: "linear-gradient(to top, rgba(64, 166, 102, 0.9) 46%, rgba(242, 242, 242, 0.3) 72%)",
+    dark: "linear-gradient(to top, rgba(80, 207, 128, 0.4), rgba(23, 23, 26, 1) 50%)",
+    light: "linear-gradient(to top, rgba(80, 207, 128, 0.8)10%, rgba(242, 242, 242, 1) 60%)",
   },
   typography: {
     fontFamily: "'Roboto', sans-serif",

@@ -1,4 +1,4 @@
-import { IconButton, Tooltip, Stack, useTheme } from "@mui/material";
+import { IconButton, Tooltip, Stack, Box, useTheme } from "@mui/material";
 import { GitHub, LinkedIn } from "@mui/icons-material";
 import { FigmaLogoIcon } from "@phosphor-icons/react";
 import { useContext } from "react";
@@ -11,7 +11,16 @@ export default function SocialButtons() {
 
   return (
     <>
-      <Stack direction="row" spacing={2}>
+      <Stack
+        direction="row"
+        spacing={3}
+        justifyContent={{
+          xs: "center",
+          sm: "center",
+          md: "center",
+          lg: "left",
+        }}
+      >
         <Tooltip title="Figma">
           <IconButton
             onClick={() => open("https://www.figma.com/your-profile")}
@@ -29,7 +38,17 @@ export default function SocialButtons() {
               },
             }}
           >
-            <FigmaLogoIcon weight="fill" size={27}/>
+            <Box
+              sx={{
+                width: { xs: 32, sm: 36, md: 36, lg: 28 },
+                height: { xs: 32, sm: 36, md: 36, lg: 28 },
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <FigmaLogoIcon weight="fill" size="100%" />
+            </Box>
           </IconButton>
         </Tooltip>
         <Tooltip title="GitHub">
@@ -49,7 +68,12 @@ export default function SocialButtons() {
               },
             }}
           >
-            <GitHub sx={{ width: "27px", height: "27px" }} />
+            <GitHub
+              sx={{
+                width: { xs: "32px", sm: "36px", md: "36px", lg: "27px" },
+                height: { xs: "32px", sm: "36px", md: "36px", lg: "27px" },
+              }}
+            />
           </IconButton>
         </Tooltip>
         <Tooltip title="LinkedIn">
@@ -69,7 +93,12 @@ export default function SocialButtons() {
               },
             }}
           >
-            <LinkedIn sx={{ width: "27px", height: "27px" }} />
+            <LinkedIn
+              sx={{
+                width: { xs: "32px", sm: "36px", md: "36px", lg: "27px" },
+                height: { xs: "32px", sm: "36px", md: "36px", lg: "27px" },
+              }}
+            />
           </IconButton>
         </Tooltip>
       </Stack>

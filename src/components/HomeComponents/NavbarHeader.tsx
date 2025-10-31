@@ -40,7 +40,7 @@ export default function NavbarHeader() {
           fontWeight: themeConfig.typography.titleWeight,
           display: "flex",
           alignItems: "center",
-          ...fontSizeResponsive(36, 32, 28,24,20),
+          ...fontSizeResponsive(36, 32, 36, 32,20),
         }}
       >
         <Box
@@ -109,7 +109,7 @@ export default function NavbarHeader() {
         sx={{
           textTransform: "none",
           fontWeight: 700,
-          fontSize: "0.95rem",
+          fontSize: "1rem",
           px: 3,
           py: 1.1,
           borderRadius: "10px",
