@@ -13,9 +13,9 @@ import {
   TranslateRounded,
   DownloadRounded,
 } from "@mui/icons-material";
-import { themeContext } from "../../theme/themeContext";
-import { themeConfig } from "../../theme/themeConfig";
-import { fontSizeResponsive } from "../../hooks/fontSizeResponsive";
+import { themeContext } from "../theme/themeContext";
+import { themeConfig } from "../theme/themeConfig";
+import { fontSizeResponsive } from "../hooks/fontSizeResponsive";
 
 export default function NavbarHeader() {
   const { mode, toggleMode } = useContext(themeContext);

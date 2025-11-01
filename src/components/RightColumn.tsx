@@ -1,10 +1,10 @@
 import { Box, Typography, Paper, useTheme, useMediaQuery } from "@mui/material";
-import { themeConfig } from "../../theme/themeConfig";
-import { themeContext } from "../../theme/themeContext";
+import { themeConfig } from "../theme/themeConfig";
+import { themeContext } from "../theme/themeContext";
 import { useContext } from "react";
-import { fontSizeResponsive } from "../../hooks/fontSizeResponsive";
-import EmailBox from "../EmailBox";
-import SocialButtons from "../SocialButtons";
+import { fontSizeResponsive } from "../hooks/fontSizeResponsive";
+import EmailBox from "./EmailBox";
+import SocialButtons from "./SocialButtons";
 
 export default function RightColumn() {
   const { mode } = useContext(themeContext);
@@ -16,13 +16,13 @@ export default function RightColumn() {
       sx={{
         flex: 3,
         textAlign: { xs: "center", lg: "right" },
-        mt: 4,
+        mt: { lg: 3 },
       }}
     >
       <Typography
         sx={{
           fontWeight: themeConfig.typography.subtitleWeight,
-          ...fontSizeResponsive(44, 38, 50, 46, 22),
+          ...fontSizeResponsive(44, 38, 54, 50, 22),
           color: theme.palette.custom.blackwhite,
           whiteSpace: "nowrap",
           mb: { xs: 2, sm: 4, md: 4, lg: 2 },
@@ -44,7 +44,7 @@ export default function RightColumn() {
       >
         <Typography
           sx={{
-            ...fontSizeResponsive(50, 46, 52, 46, 26),
+            ...fontSizeResponsive(50, 46, 68, 54, 26),
             fontWeight: themeConfig.typography.titleWeight,
             color: theme.palette.custom.primaryGreen,
           }}
@@ -55,12 +55,12 @@ export default function RightColumn() {
 
       <Typography
         sx={{
-          ...fontSizeResponsive(20, 18, 34, 30, 16),
+          ...fontSizeResponsive(20, 18, 30, 26, 16),
           lineHeight: 1.5,
           fontWeight: themeConfig.typography.bodyWeight,
           color: theme.palette.custom.blackwhite,
-          mt: 6,
-          mb: 6,
+          mt: 5,
+          mb: 5,
           pl: { xs: 4, sm: 4, md: 4, lg: 14, xl: 14 },
           pr: { xs: 4, sm: 4, md: 4, lg: 0, xl: 0 },
           textAlign: { xs: "left", lg: "right" },
@@ -74,7 +74,7 @@ export default function RightColumn() {
 
       {isTablet && (
         <Box
-          sx={{ textAlign: "center", }}
+          sx={{ textAlign: "center" }}
           justifyContent={{
             xs: "center",
             sm: "center",
@@ -84,7 +84,7 @@ export default function RightColumn() {
         >
           <EmailBox email="larry.rdevz@outlook.com" />
           <Box
-            sx={{ pt: 5, }}
+            sx={{ pt: 5 }}
             justifyContent={{
               xs: "center",
               sm: "center",

@@ -23,7 +23,7 @@ export default function SocialButtons() {
       >
         <Tooltip title="Figma">
           <IconButton
-            onClick={() => open("https://www.figma.com/your-profile")}
+            onClick={() => open("https://figma.com/@larryariel")}
             sx={{
               bgcolor: theme.palette.custom.secondaryGreen,
               color: theme.palette.custom.textGreen,
@@ -53,7 +53,7 @@ export default function SocialButtons() {
         </Tooltip>
         <Tooltip title="GitHub">
           <IconButton
-            onClick={() => open("https://github.com/yourusername")}
+            onClick={() => open("https://github.com/LRDEV13")}
             sx={{
               bgcolor: theme.palette.custom.secondaryGreen,
               color: theme.palette.custom.textGreen,
@@ -78,7 +78,7 @@ export default function SocialButtons() {
         </Tooltip>
         <Tooltip title="LinkedIn">
           <IconButton
-            onClick={() => open("https://www.linkedin.com/in/yourprofile")}
+            onClick={() => open("https://www.linkedin.com/in/larry-rodriguez-cruz-942197397/")}
             sx={{
               bgcolor: theme.palette.custom.secondaryGreen,
               color: theme.palette.custom.textGreen,

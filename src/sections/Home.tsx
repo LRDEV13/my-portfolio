@@ -1,17 +1,14 @@
-import { Box, Typography, Paper, useTheme, useMediaQuery } from "@mui/material";
-import NavbarHeader from "./HomeComponents/NavbarHeader";
-import LeftColumn from "./HomeComponents/LeftColumn";
+import { Box, useTheme, useMediaQuery } from "@mui/material";
+import NavbarHeader from "../components/NavbarHeader";
+import LeftColumn from "../components/LeftColumn";
 import profile from "../assets/profile.png";
-import RightColumn from "./HomeComponents/RightColumn";
+import RightColumn from "../components/RightColumn";
 import { themeConfig } from "../theme/themeConfig";
-import { fontSizeResponsive } from "../hooks/fontSizeResponsive";
-import { useContext } from "react";
-import { themeContext } from "../theme/themeContext";
+import IntroText from "../components/IntroText";
 
-export default function HomeSection() {
+export default function Home() {
   const theme = useTheme();
   const isDarkMode = theme.palette.mode === "dark";
-  const { mode } = useContext(themeContext);
   const isTablet = useMediaQuery("(max-width: 1199px)");
 
   return (
@@ -59,7 +56,8 @@ export default function HomeSection() {
           width: "100%",
           maxWidth: "1400px",
           px: { xs: 3, sm: 6, md: 8, lg: 4 },
-          pt: { xs: 3, sm: 6, md: 10, lg: 0 },
+          pt: { xs: 0, sm: 3, md: 12, lg: 0 },
+          pb: { xs: 0, sm: 3, md: 12, lg: 0 },
           gap: { xs: 4, sm: 6, md: 8, lg: 2 },
           "@media (max-width:1332px)": {
             px: 4,
@@ -113,86 +111,7 @@ export default function HomeSection() {
             }}
           />
 
-          {isTablet && (
-            <Box
-              sx={{
-                mb: { xs: 2, sm: -4, md: -4, lg: 10, xl: 14 },
-              }}
-            >
-              <Paper
-                elevation={0}
-                sx={{
-                  display: "inline-block",
-                  textAlign: "left",
-                  px: 2,
-                  py: 1,
-                  bgcolor:
-                    mode === "dark"
-                      ? "rgba(242,242,242,0.02)"
-                      : "rgba(23,23,26,0.04)",
-                  borderRadius: "8px",
-                  mb: 2,
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: theme.palette.custom.primaryGreen,
-                    fontWeight: themeConfig.typography.bodyWeight,
-                    ...fontSizeResponsive(20, 18, 22, 20, 16),
-                  }}
-                >
-                  Hola, no soy un modelo de IA, soy
-                </Typography>
-              </Paper>
-
-              <Typography
-                sx={{
-                  fontWeight: themeConfig.typography.titleWeight,
-                  ...fontSizeResponsive(66, 58, 68, 62, 24),
-                  color: theme.palette.custom.blackwhite,
-                  lineHeight: 1.1,
-                  whiteSpace: "nowrap",
-                  mb: 2,
-                }}
-              >
-                Larry Ariel
-              </Typography>
-
-              <Box
-                justifyContent={{
-                  xs: "center",
-                  sm: "center",
-                  md: "center",
-                  lg: "flex-start",
-                }}
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 3,
-                  mt: 2,
-                  mb: 2,
-                }}
-              >
-                <Box
-                  sx={{
-                    width: { xs: 95, sm: 110, md: 125, lg: 140, xl: 140 },
-                    height: 6,
-                    bgcolor: theme.palette.custom.primaryGreen,
-                    borderRadius: 2,
-                  }}
-                />
-                <Typography
-                  sx={{
-                    ...fontSizeResponsive(54, 44, 52, 42, 26),
-                    fontWeight: themeConfig.typography.subtitleWeight,
-                    color: theme.palette.custom.blackwhite,
-                  }}
-                >
-                  Rodríguez
-                </Typography>
-              </Box>
-            </Box>
-          )}
+          {isTablet && <IntroText />}
         </Box>
 
         {/* Columna Derecha */}
