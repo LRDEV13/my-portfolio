@@ -25,13 +25,22 @@ export default function NavbarHeader() {
     <Box
       component="header"
       sx={{
+        position: "fixed",
+        top: 0,
+        left: 0,
         width: "100%",
-        maxWidth: 1400,
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        px: { xs: 3, sm: 6, md: 8, lg: 4 },
-        py: 3,
+        px: { xs: 3, sm: 6, md: 8, lg: 12 },
+        py: 1.3,
+        zIndex: 1100,
+        backdropFilter: "blur(8px)",
+        backgroundColor:
+          theme.palette.mode === "dark"
+            ? "rgba(23, 23, 26, 0.4)"
+            : "rgba(242, 242, 242, 0.6)",
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.4)",
       }}
     >
       {/* Logo */}
@@ -40,7 +49,7 @@ export default function NavbarHeader() {
           fontWeight: themeConfig.typography.titleWeight,
           display: "flex",
           alignItems: "center",
-          ...fontSizeResponsive(36, 32, 36, 32,20),
+          ...fontSizeResponsive(36, 32, 36, 32, 20),
         }}
       >
         <Box

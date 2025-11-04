@@ -1,5 +1,4 @@
 import { Box, useTheme, useMediaQuery } from "@mui/material";
-import NavbarHeader from "../components/NavbarHeader";
 import LeftColumn from "../components/LeftColumn";
 import profile from "../assets/profile.png";
 import RightColumn from "../components/RightColumn";
@@ -15,7 +14,12 @@ export default function Home() {
     <Box
       sx={{
         width: "100%",
-        minHeight: "100vh",
+        minHeight: {
+          xs: "calc(100vh - 80.8px)",
+          sm: "calc(100vh - 83.2px)",
+          md: "calc(100vh - 89.2px)",
+          lg: "calc(100vh - 83.2px)",
+        },
         position: "relative",
         display: "flex",
         flexDirection: "column",
@@ -24,8 +28,9 @@ export default function Home() {
           xs: "flex-start",
           sm: "flex-start",
           md: "flex-start",
-          lg: "space-between",
+          lg: "flex-end",
         },
+        flexGrow: 1,
         background: isDarkMode
           ? themeConfig.gradient.dark
           : themeConfig.gradient.light,
@@ -36,9 +41,6 @@ export default function Home() {
         overflow: "hidden",
       }}
     >
-      {/* === NAVBAR === */}
-      <NavbarHeader />
-
       {/* === CONTENIDO PRINCIPAL === */}
       <Box
         sx={{

@@ -5,7 +5,26 @@ body,
   width: 100%;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
   font-family: Roboto, sans-serif;
+}
+
+/*:root {
+  --navbar-height: 88px; 
+}*/
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #50CF80;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2fb98a;
 }
